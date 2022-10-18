@@ -14,7 +14,7 @@ int main(int argc, char* args[]) {
 	if (SDL_Init(!SDL_INIT_VIDEO | SDL_INIT_EVENTS))
 		std::cout << "video could not init";
 
-	SDL_Window* Window = SDL_CreateWindow("hgame", 200, 200, 200, 200, 0);
+	SDL_Window* Window = SDL_CreateWindow("agame", 200, 200, 200, 200, 0);
 	if (Window == NULL)
 		std::cout << "Window empty 8/";
 	else {
