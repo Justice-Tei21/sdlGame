@@ -1,26 +1,24 @@
 #pragma once
 #include "SDL_video.h"
+#include"SDL.h"
+
 class Window
 {
 private:
-	Window* instance = 0;
-
-
-public:
 	SDL_Window* window;
 
-private:
 
-	Window();
+	
 
 public:
 
+	Window();
+	bool init();
+	~Window();
 
+	SDL_Window* getwin();
 
-	Window* getWindow() {
-		if (instance == 0) {
-			instance = new Window();
-		}
-	};
+	void update();
+	
 };
 

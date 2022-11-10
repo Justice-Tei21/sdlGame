@@ -1,5 +1,7 @@
 #include<iostream>
 #include"SDL.h"
+#include"SDL_image.h"
+#include"Window.h"
 
 
 
@@ -7,23 +9,23 @@
 int main(int argc, char* args[]) {
 	std::cout << "hello world\n";
 
-
+	Window * truewindow = new Window();
 	SDL_Event event;
 	bool playing = true;
 
-	if (SDL_Init(!SDL_INIT_VIDEO | SDL_INIT_EVENTS))
-		std::cout << "video could not init";
+	if (SDL_Init(SDL_INIT_VIDEO)) {
+		std::cout << "video could not init"; return 1;}
 
-	SDL_Window* Window = SDL_CreateWindow("agame", 200, 200, 200, 200, 0);
-	if (Window == NULL)
-		std::cout << "Window empty 8/";
-	else {
-		SDL_Surface* screensurface = SDL_GetWindowSurface(Window);
+	SDL_Window* Window = truewindow->getwin();
+	
 
-		SDL_FillRect(screensurface, NULL, SDL_MapRGB(screensurface->format, 0xff, 0x00, 0xbf));
+	SDL_Surface* screensurface = SDL_GetWindowSurface(Window);
 
-	}
-
+	SDL_FillRect(screensurface, NULL, SDL_MapRGB(screensurface->format, 0x87, 0xce, 0xeb));
+	
+	
+	
+	
 
 
 
@@ -43,7 +45,14 @@ int main(int argc, char* args[]) {
 
 
 		case SDL_KEYDOWN:
-		{playing = false; }
+		{
+			switch (event.key.keysym.sym) {
+			case SDLK_0:
+				std::cout << "yes";
+			}
+
+			
+		}
 
 
 		}
