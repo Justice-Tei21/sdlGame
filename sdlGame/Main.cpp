@@ -9,7 +9,11 @@
 int main(int argc, char* args[]) {
 	std::cout << "hello world\n";
 
+
 	Window * truewindow = new Window();
+
+
+	
 	SDL_Event event;
 	bool playing = true;
 
