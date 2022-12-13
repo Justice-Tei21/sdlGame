@@ -115,7 +115,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>SDL2.lib;SDL2main.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -135,19 +135,27 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Entity.cpp" />
     <ClCompile Include="Events.cpp" />
     <ClCompile Include="Game.cpp" />
+    <ClCompile Include="Grass.cpp" />
     <ClCompile Include="Main.cpp" />
-    <ClCompile Include="Renderer.cpp" />
     <ClCompile Include="Time.cpp" />
-    <ClCompile Include="Window.cpp" />
+    <ClCompile Include="WindowRenderer.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Entity.h" />
     <ClInclude Include="Events.h" />
     <ClInclude Include="Game.h" />
-    <ClInclude Include="Renderer.h" />
+    <ClInclude Include="Grass.h" />
     <ClInclude Include="Time.h" />
-    <ClInclude Include="Window.h" />
+    <ClInclude Include="WindowRenderer.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\Image.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets" />

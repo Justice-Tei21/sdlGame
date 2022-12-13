@@ -18,7 +18,7 @@
     <ClCompile Include="Main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Window.cpp">
+    <ClCompile Include="WindowRenderer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Game.cpp">
@@ -30,12 +30,15 @@
     <ClCompile Include="Time.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Renderer.cpp">
+    <ClCompile Include="Entity.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Grass.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Window.h">
+    <ClInclude Include="WindowRenderer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Game.h">
@@ -47,8 +50,19 @@
     <ClInclude Include="Time.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Renderer.h">
+    <ClInclude Include="Entity.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Grass.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\Image.png">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>

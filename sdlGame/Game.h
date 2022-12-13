@@ -1,13 +1,23 @@
 #pragma once
-#include "Window.h"
+#include "WindowRenderer.h"
+#include "Events.h"
+#include"Entity.h"
+#include"SDL_image.h"
+#include"Grass.h"
+
+#include"SDL.h"
+
 class Game
 {	
-	private:
-		Window* window;
+		
+	
+	bool play = false;
+		
 
 	public:
-
-		Game();
+		WindowRenderer* windowrenderer;
+		Events* eventsys;
+		
 		bool Init();
 		void Run();
 		void Quit();

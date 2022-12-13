@@ -1,7 +1,6 @@
 #include<iostream>
-#include"SDL.h"
-#include"SDL_image.h"
-#include"Window.h"
+#include"Game.h"
+
 
 
 
@@ -9,8 +8,18 @@
 int main(int argc, char* args[]) {
 	std::cout << "hello world\n";
 
+	Game* thegame = new Game();
+	
 
-	Window * truewindow = new Window();
+	thegame->Init();
+
+	thegame->Run();
+
+	thegame->Quit();
+
+
+
+	/*Window* truewindow = new Window();
 
 
 	
@@ -20,10 +29,10 @@ int main(int argc, char* args[]) {
 	if (SDL_Init(SDL_INIT_VIDEO)) {
 		std::cout << "video could not init"; return 1;}
 
-	SDL_Window* Window = truewindow->getwin();
+	SDL_Window* window = truewindow->getwin();
 	
 
-	SDL_Surface* screensurface = SDL_GetWindowSurface(Window);
+	SDL_Surface* screensurface = SDL_GetWindowSurface(window);
 
 	SDL_FillRect(screensurface, NULL, SDL_MapRGB(screensurface->format, 0x87, 0xce, 0xeb));
 	
@@ -63,13 +72,13 @@ int main(int argc, char* args[]) {
 
 
 
-		SDL_UpdateWindowSurface(Window);
+		SDL_UpdateWindowSurface(window);
 
 	}
 
 
-	SDL_DestroyWindow(Window);
-	SDL_Quit();
+	SDL_DestroyWindow(window);
+	SDL_Quit();*/
 
 	return 0;
 }

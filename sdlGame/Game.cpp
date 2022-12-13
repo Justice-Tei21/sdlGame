@@ -1,6 +1,7 @@
 #include "Game.h"
-#include"SDL.h"
-#include "Window.h"
+
+
+
 
 
 
@@ -9,17 +10,29 @@
 bool Game::Init() {
 
 	bool success = true;
+	int img_flag = IMG_INIT_PNG;
 	if (SDL_Init(SDL_INIT_EVENTS | SDL_INIT_VIDEO)) {
 		success = false;
 	}
 	else 
 	{
-		this->window = new Window();
+		IMG_Init(img_flag) && !img_flag;
+		windowrenderer = new WindowRenderer();
+		eventsys = new Events();
 		
-		window->init();
-		SDL_Window* real_window = window->getwin();
+		
+		
+		windowrenderer->Init();
+		eventsys->Init(&play);
+		
 
-		SDL_FillRect(window->getsurf(), NULL, SDL_MapRGB(window->getsurf()->format, 0x87, 0xce, 0xeb));
+
+
+		SDL_Window* real_window = windowrenderer->windowrenderer;
+		SDL_Surface* real_surf = windowrenderer->winsurface;
+
+
+		
 
 	}
 	return success;
@@ -27,13 +40,27 @@ bool Game::Init() {
 }
 
 void Game::Run() {
-	bool play = true;
-
+	play = true;
+	Entity* player = new Entity(windowrenderer,200,500);
+	Entity* grass = new Grass(windowrenderer,0,0);
+	
+	
 
 	while (play) 
-	{
-		window->update();
+	{	
+		
+		eventsys->Update();
+		windowrenderer->update();
+		
+		
 	}
 
-	window->~Window();
+	windowrenderer->Quit();
+}
+
+void Game::Quit() {
+	windowrenderer->Quit();
+
+	SDL_Quit();
+	IMG_Quit();
 }
