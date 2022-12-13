@@ -61,6 +61,7 @@ void Game::Run() {
 void Game::Quit() {
 	windowrenderer->Quit();
 
+
 	SDL_Quit();
 	IMG_Quit();
 }
